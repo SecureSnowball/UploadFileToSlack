@@ -1,3 +1,8 @@
+name: Build APK
+on:
+  push:
+    branches:
+      - master
 jobs:
   post:
     runs-on: ubuntu-latest
