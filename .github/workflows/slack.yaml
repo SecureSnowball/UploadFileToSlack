@@ -9,6 +9,8 @@ jobs:
     steps:
       - run: pwd; ls -alh
       - run: cd ~; ls -alh
+      - run: ls ~/work/UploadFileToSlack
+      - run: ls ~/work/UploadFileToSlack/UploadFileToSlack
       - uses: MeilCli/slack-upload-file@v1
         id: message
         with:
