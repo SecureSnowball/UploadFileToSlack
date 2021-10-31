@@ -7,7 +7,8 @@ jobs:
   post:
     runs-on: ubuntu-latest
     steps:
-      - run: ls
+      - run: pwd; ls -alh
+      - run: cd ~; ls -alh
       - uses: MeilCli/slack-upload-file@v1
         id: message
         with:
