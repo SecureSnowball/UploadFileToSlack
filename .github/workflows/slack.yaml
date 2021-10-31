@@ -1,0 +1,15 @@
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo ${{ github.event.inputs.message }} > message.txt'
+      - uses: MeilCli/slack-upload-file@v1
+        id: message
+        with:
+          slack_token: ${{ secrets.SLACK_TOKEN }}
+          channels: ${{ secrets.SLACK_CHANNELS }}
+          file_path: 'message.txt'
+          file_name: 'message.txt'
+          file_type: 'text'
+          initial_comment: 'post by slack-upload-file'
+      - run: 'echo ${{ fromJson(steps.message.outputs.response).file.permalink }}'
