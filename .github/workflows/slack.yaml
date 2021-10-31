@@ -7,7 +7,7 @@ jobs:
   post:
     runs-on: ubuntu-latest
     steps:
-      - run: 'echo ${{ github.event.inputs.message }} > message.txt'
+      - run: ls
       - uses: MeilCli/slack-upload-file@v1
         id: message
         with:
