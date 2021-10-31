@@ -13,8 +13,8 @@ jobs:
         with:
           slack_token: ${{ secrets.SLACK_TOKEN }}
           channels: ${{ secrets.SLACK_CHANNELS }}
-          file_path: 'message.txt'
-          file_name: 'message.txt'
-          file_type: 'text'
+          file_path: 'README.md'
+          file_name: 'README.md'
+          file_type: 'markdown'
           initial_comment: 'post by slack-upload-file'
       - run: 'echo ${{ fromJson(steps.message.outputs.response).file.permalink }}'
